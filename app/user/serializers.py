@@ -15,3 +15,6 @@ class UserSerializer(serializers.ModelSerializer):
         """"Created a new user with encrypted password and return it"""
         return get_user_model().objects.create_user(**validated_data)
 
+
+
+
