@@ -35,7 +35,7 @@ class PrivateTagApiTests(TestCase):
             'passtest'
         )
         self.client = APIClient()
-        self.client.force_authenticate()
+        self.client.force_authenticate(self.user)
 
     def test_retrieve_tags(self):
         """Test retrieve tags"""
@@ -62,9 +62,4 @@ class PrivateTagApiTests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(len(res.data), 1)
-        self.asssertEqual(res.data[0]['name'], tag.name)
-
-
-
-
-
+        self.assertEqual(res.data[0]['name'], tag.name)

@@ -4,7 +4,6 @@ from django.utils.translation import ugettext_lazy as _
 from rest_framework import serializers
 
 
-
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the users object"""
 
@@ -53,4 +52,3 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return attrs
-
